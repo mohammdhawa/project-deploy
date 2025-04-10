@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+use App\Models\Movie;
+
 Route::get('/', function () {
-    return view('welcome');
+    $movies = Movie::all();
+    return view('home', compact('movies'));
 });
